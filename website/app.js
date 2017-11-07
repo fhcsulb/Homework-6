@@ -20,10 +20,9 @@ const  candidates = [
             element.appendChild(candidate_name);
 
             let like_count = document.createElement("p");
+            like_count.id=i;
             like_count.innerHTML = candidates[i].likes;
-            like_count.className = i;
             element.appendChild(like_count);
-           
             
 
             let like_button = document.createElement("button");
@@ -50,8 +49,8 @@ const  candidates = [
   function likeIncrement(index)
   {
       console.log(candidates[index]);
-      candidates[index].likes = Number(candidates[index].likes)+1;
-      document.getElementsByClassName(index).innerHTML = candidates[index].likes;
-      console.log(document.getElementsByClassName(index) );
+      
+      candidates[index].likes = candidates[index].likes+1;
+      document.getElementById(index).innerHTML = candidates[index].likes;
       console.log("Like Button clicked ! ");
   }
