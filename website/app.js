@@ -1,7 +1,7 @@
 const  candidates = [
-    { name: 'Peter Parker', likes: '700'},
-    { name: 'Tony Stark', likes: '135'},
-    { name: 'dash', likes: '0'},
+    { name: 'Peter Parker', likes: 700},
+    { name: 'Tony Stark', likes: 135},
+    { name: 'dash', likes: 0},
   ]
 
   
@@ -21,12 +21,15 @@ const  candidates = [
 
             let like_count = document.createElement("p");
             like_count.innerHTML = candidates[i].likes;
+            like_count.className = i;
             element.appendChild(like_count);
+           
             
 
             let like_button = document.createElement("button");
             like_button.innerHTML = "Like";
-            like_button.onclick = likeIncrement;
+            like_button.className=i;
+            like_button.onclick = function(){ likeIncrement(this.className)};
             element.appendChild(like_button);
 
             let delete_button = document.createElement("button");
@@ -35,9 +38,6 @@ const  candidates = [
             element.appendChild(delete_button);
 
       }
-
-      
-
   }
 
  
@@ -47,9 +47,11 @@ const  candidates = [
     console.log("Delete Button clicked ! ");
   }
 
-  function likeIncrement()
+  function likeIncrement(index)
   {
-      
-
+      console.log(candidates[index]);
+      candidates[index].likes = Number(candidates[index].likes)+1;
+      document.getElementsByClassName(index).innerHTML = candidates[index].likes;
+      console.log(document.getElementsByClassName(index) );
       console.log("Like Button clicked ! ");
   }
