@@ -12,7 +12,6 @@ const  candidates = [
         
 
             let element = document.createElement("div");
-            // element.appendChild(document.createTextNode(candidates[i].name +   "\t\t" +like_count));
             document.getElementById("candidate").appendChild(element);
 
             let candidate_name = document.createElement("p");
@@ -20,6 +19,8 @@ const  candidates = [
             element.appendChild(candidate_name);
 
             let like_count = document.createElement("p");
+
+            // set the like counter ID to the array index.
             like_count.id=i;
             like_count.innerHTML = candidates[i].likes;
             element.appendChild(like_count);
@@ -33,7 +34,8 @@ const  candidates = [
 
             let delete_button = document.createElement("button");
             delete_button.innerHTML = "Delete";
-            delete_button.onclick = deleteCandidate;
+            delete_button.onclick = function () { deleteCandidate(this.className)};
+            
             element.appendChild(delete_button);
 
       }
@@ -44,6 +46,8 @@ const  candidates = [
   function deleteCandidate()
   {
     console.log("Delete Button clicked ! ");
+
+
   }
 
   function likeIncrement(index)
@@ -53,4 +57,11 @@ const  candidates = [
       candidates[index].likes = candidates[index].likes+1;
       document.getElementById(index).innerHTML = candidates[index].likes;
       console.log("Like Button clicked ! ");
+  }
+
+
+  function addCandidate()
+  {
+    console.log( document.getElementById("candidate_name").value );
+    console.log("hello");
   }
