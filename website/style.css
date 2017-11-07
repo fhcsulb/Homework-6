@@ -1,0 +1,19 @@
+body {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    margin: auto;
+}
+
+div#candidate{
+    width: 60%;
+}
+
+div#candidate div{
+    width: 100%;
+}
+
+p {
+    display: inline;
+    margin: 5%;
+}
