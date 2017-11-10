@@ -46,6 +46,8 @@ const  candidates = [
   function deleteCandidate()
   {
     console.log("Delete Button clicked ! ");
+    
+    
 
 
   }
@@ -73,8 +75,6 @@ const  candidates = [
     element.appendChild(candidate_name);
 
     let like_count = document.createElement("p");
-    
-    // set the like counter ID to the array index.
     like_count.id=candidates.length - 1;
     like_count.innerHTML = 0;
     element.appendChild(like_count);
