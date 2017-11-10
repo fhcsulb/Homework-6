@@ -9,6 +9,10 @@ div#candidate{
     width: 60%;
 }
 
+div#add{
+    width: 40%;
+}
+
 div#candidate div{
     width: 100%;
 }
@@ -17,3 +21,17 @@ p {
     display: inline;
     margin: 5%;
 }
+
+button#submit{
+    float: right;
+} 
+
+input{
+    float: right;
+}
+
+button{
+    float: right;
+}
+
+
