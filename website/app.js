@@ -43,15 +43,17 @@ const  candidates = [
 
  
 
-  function deleteCandidate()
+
+  function deleteCandidate(index)
   {
-    console.log("Delete Button clicked ! ");
-    
-    
-
-
+      console.log(index);
+      var child = document.getElementsByClassName(index);
+      console.log(child);
+      child.parentNode.removeChild(child);
+      console.log("Delete Button clicked ! ");
   }
-
+    
+     
   function likeIncrement(index)
   {
       console.log(candidates[index]);
