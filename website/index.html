@@ -12,14 +12,17 @@
 </head>
 <body>
     <div id="candidate">
+        <p id="candidate_header">Candidate List</p>
     </div>
 
     <div id="add">
-        <form action>
-            <button type="button" onclick ="addCandidate()"> Submit </button>
+            <p id="add_header">Create a Candidate</p>
+        <form>
+               
             <input type="text" id = "candidate_name" placeholder="Input name" > 
-            
+            <button type="button" id = "submit" onclick ="addCandidate()"> Submit </button>
         </form>
+        
     </div>
 
     <script>

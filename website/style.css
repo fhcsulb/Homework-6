@@ -23,15 +23,29 @@ p {
 }
 
 button#submit{
-    float: right;
+    width: 10%;
+    margin-right: 10%;
+    
 } 
 
+form {
+    width: 100%;
+    text-align: center;
+}
+
 input{
-    float: right;
+    width: 40%;
+    text-align: center;
 }
 
 button{
     float: right;
+}
+
+p#candidate_header , p#add_header{
+    display: inherit;
+    text-align: center;
+
 }
 
 
