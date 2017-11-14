@@ -92,45 +92,49 @@ function deleteCandidate(index) {
   // This is a function for adding candidates. 
   // When a candidate is added, their name will appear in the list.
   function addCandidate() {
+    
     // Retrieve the user-input name from the text input box
     // Set their inital like_count to 0
     let new_name = document.getElementById("candidate_name").value ;
-    candidates.push({name: new_name, likes: 0 })
-
-    // Create a div and make it the child of the 'candidate' div.
-    // The 'candidate' div is instantiated in the HTML
-    let element = document.createElement("div");
-    element.id = new_name;
-    document.getElementById("candidate").appendChild(element);
-
-    // Create a p element inside the just created 'person' div
-    // to hold the candidate's name
-    let candidate_name = document.createElement("p");
-    candidate_name.innerHTML = new_name;
-    element.appendChild(candidate_name);
-
-     // Create a p element inside the 'person' div 
-    // to hold their number of likes
-    let like_count = document.createElement("p");
-    like_count.id=candidates.length - 1;
-    like_count.innerHTML = 0;
-    element.appendChild(like_count);
-
-    // Create the delete-button
-    // Set the button's classname to the candidate[i] index
-    let delete_button = document.createElement("button");
-    delete_button.className = candidates.length - 1;
-    delete_button.innerHTML = "Delete";
-    delete_button.onclick = function () { deleteCandidate(this.className)};
-    element.appendChild(delete_button);
-
-    // Create the like-button
-    // Set the button's classname to the candidate[i] index
-    let like_button = document.createElement("button");
-    like_button.innerHTML = "Like";
-    like_button.className=candidates.length - 1;
-    like_button.onclick = function(){ likeIncrement(this.className)};
-    element.appendChild(like_button);
+    if(new_name.length > 0) {
+      candidates.push({name: new_name, likes: 0 })
+      
+          // Create a div and make it the child of the 'candidate' div.
+          // The 'candidate' div is instantiated in the HTML
+          let element = document.createElement("div");
+          element.id = new_name;
+          document.getElementById("candidate").appendChild(element);
+      
+          // Create a p element inside the just created 'person' div
+          // to hold the candidate's name
+          let candidate_name = document.createElement("p");
+          candidate_name.innerHTML = new_name;
+          element.appendChild(candidate_name);
+      
+           // Create a p element inside the 'person' div 
+          // to hold their number of likes
+          let like_count = document.createElement("p");
+          like_count.id=candidates.length - 1;
+          like_count.innerHTML = 0;
+          element.appendChild(like_count);
+      
+          // Create the delete-button
+          // Set the button's classname to the candidate[i] index
+          let delete_button = document.createElement("button");
+          delete_button.className = candidates.length - 1;
+          delete_button.innerHTML = "Delete";
+          delete_button.onclick = function () { deleteCandidate(this.className)};
+          element.appendChild(delete_button);
+      
+          // Create the like-button
+          // Set the button's classname to the candidate[i] index
+          let like_button = document.createElement("button");
+          like_button.innerHTML = "Like";
+          like_button.className=candidates.length - 1;
+          like_button.onclick = function(){ likeIncrement(this.className)};
+          element.appendChild(like_button);
+    }
+    
 
   
   }
